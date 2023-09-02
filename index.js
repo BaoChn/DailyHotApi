@@ -28,7 +28,7 @@ app.use(
 );
 
 app.use(async (ctx, next) => {
-  if (domain === "*") {
+  if (domain === "bao.red") {
     await next();
   } else {
     if (ctx.headers.origin === domain || ctx.headers.referer === domain) {
@@ -37,7 +37,7 @@ app.use(async (ctx, next) => {
       ctx.status = 403;
       ctx.body = {
         code: 403,
-        message: "请通过正确的域名访问",
+        message: "请通过主页面[bao.red]查看热搜信息",
       };
     }
   }
