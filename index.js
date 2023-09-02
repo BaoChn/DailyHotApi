@@ -28,7 +28,7 @@ app.use(
 );
 
 app.use(async (ctx, next) => {
-  if (domain === "https://bao.red") {
+  if (domain === "*") {
     await next();
   } else {
     if (ctx.headers.origin === domain || ctx.headers.referer === domain) {
